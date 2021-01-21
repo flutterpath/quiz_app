@@ -1,14 +1,13 @@
-import "package:flutter/material.dart";
-import 'Detail_quiz1.dart';
-import 'Detail_quiz2.dart';
-import 'Detail_quiz3.dart';
+import 'package:flutter/material.dart';
+import 'package:quiz_app/all_course.dart';
+import 'package:quiz_app/detail.dart';
+import 'package:quiz_app/detail_study2.dart';
+import 'package:quiz_app/detail_syuying.dart';
+import 'package:quiz_app/home.dart';
 
-void main(){
+void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: Detailquiz2(),
+    home: Details(),
   ));
 }
-
-
-

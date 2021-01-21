@@ -1,0 +1,24 @@
+const String bgImage ='assets/bgImage.png';
+const String illImage ='assets/bgImageMain.png';
+const String menuBgImage ='assets/menubgImage.png';
+const String ic_arrow ='assets/ic_arrow.png';
+const String ic_logout ='assets/ic_logout.png';
+const String ic_changeSecurity ='assets/ic_changeSecurity.png';
+const String ic_changePassword ='assets/ic_changePassword.png';
+const String ic_appsInfo ='assets/ic_appsInfo.png';
+const String ic_appsSetting ='assets/ic_appsSetting.png';
+const String ic_termAnd ='assets/ic_termAnd.png';
+const String ic_privacyPolicy ='assets/ic_privacyPolicy.png';
+const String ic_helpCenter ='assets/ic_helpCenter.png';
+const String bg_profile ='assets/bg_profile.png';
+const String ic_seeMore ='assets/ic_SeeMore.png';
+const String ic_math='assets/ic_Math.png';
+const String ic_biology ='assets/ic_biology.png';
+const String ic_image ='assets/ic_image.png';
+const String ic_discount ='assets/discount.png';
+const String ic_learn ='assets/learn.png';
+const String ic_points ='assets/points.png';
+const String ic_teacher='assets/teacher.png';
+const String bg_study='assets/bg_study.png';
+const String bg_home='assets/bg_home.png';
+
