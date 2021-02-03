@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:quiz_app/main_ui/onboarding/login.dart';
 import 'package:quiz_app/utils/colorsPicker.dart';
 import 'package:quiz_app/utils/image.helper.dart';
 import 'package:quiz_app/utils/string.dart';
@@ -70,7 +71,7 @@ class _RegisterState extends State<Register> {
                 overflow: Overflow.visible,
                 children: [
                   Positioned(
-                    top: -20,
+                    top: -25,
                     bottom: 0,
                     left: 0,
                     right: 0,
@@ -83,9 +84,9 @@ class _RegisterState extends State<Register> {
                         padding: const EdgeInsets.all(15.0),
                         child: Column(
                           children: [
-                            SizedBox(height: 16),
-                            Text(loremIpsumDolor,style: TextStyle(fontSize: 12),),
-                            SizedBox(height: 20),
+                            SizedBox(height: height*0.01),
+                            Text(loremIpsumDolor,style: TextStyle(fontSize: 10),),
+                            SizedBox(height: height*0.01),
                             TextFormField(
                               style: TextStyle(
                                 fontSize: 12,
@@ -108,7 +109,7 @@ class _RegisterState extends State<Register> {
                                 ),
                               ),
                             ),
-                            SizedBox(height: 16),
+                            SizedBox(height: height*0.02),
                             TextFormField(
                               style: TextStyle(
                                 fontSize: 12,
@@ -131,7 +132,7 @@ class _RegisterState extends State<Register> {
                                 ),
                               ),
                             ),
-                            SizedBox(height: 16),
+                            SizedBox(height: height*0.02),
                             TextFormField(
                               style: TextStyle(
                                 fontSize: 12,
@@ -154,7 +155,7 @@ class _RegisterState extends State<Register> {
                                 ),
                               ),
                             ),
-                            SizedBox(height: 16),
+                            SizedBox(height: height*0.02),
                             TextFormField(
                               style: TextStyle(
                                 fontSize: 12,
@@ -177,7 +178,7 @@ class _RegisterState extends State<Register> {
                                 ),
                               ),
                             ),
-                            SizedBox(height: 16),
+                            SizedBox(height: height*0.02),
                             TextFormField(
                               obscureText: true,
                               style: TextStyle(
@@ -218,7 +219,11 @@ class _RegisterState extends State<Register> {
                   MaterialButton(
                     minWidth: width * 0.40,
                     height: 60,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => Login(),
+                      ));
+                    },
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10.0)),
                     color: primaryAppColor,

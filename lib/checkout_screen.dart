@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:quiz_app/payment_screen.dart';
 import 'package:quiz_app/util/color_picker.dart';
 import 'package:quiz_app/util/image_picker.dart';
 import 'package:quiz_app/util/string.dart';
@@ -41,10 +42,15 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                           color: white,
                           borderRadius: BorderRadius.all(Radius.circular(10))),
                       child: Center(
-                        child: ImageIcon(
-                          AssetImage(back),
-                          size: 15.0,
-                          color: primaryAppColor,
+                        child: InkWell(
+                          onTap: (){
+                            Navigator.pop(context);
+                          },
+                          child: ImageIcon(
+                            AssetImage(back),
+                            size: 15.0,
+                            color: primaryAppColor,
+                          ),
                         ),
                       ),
                     ),
@@ -85,7 +91,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                     bottom: 0,
                     child: Container(
                       width: double.infinity,
-                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      padding: EdgeInsets.symmetric(horizontal: 12),
                       decoration: BoxDecoration(
                         color: white,
                         borderRadius: BorderRadius.all(Radius.circular(30)),
@@ -100,8 +106,8 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                               return Card(
                                 elevation: 3,
                                 child: Container(
-                                  padding: EdgeInsets.symmetric(horizontal: 10.0),
-                                  margin: EdgeInsets.only(top: 15, right: 2),
+                                  // padding: EdgeInsets.symmetric(horizontal: 0.0),
+                                  // margin: EdgeInsets.only(top: 15,),
                                   decoration: BoxDecoration(
                                     boxShadow: [
                                       BoxShadow(
@@ -116,7 +122,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                   child: Row(
                                     children: <Widget>[
                                       Image.asset(Ecourse,
-                                          height: height*0.11, width: width*0.25),
+                                          height: height*0.11, width: width*0.22),
                                       SizedBox(width: width*0.04),
                                       Column(
                                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -160,26 +166,31 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                           ),
                                         ],
                                       ),
-                                      SizedBox(width: width*0.06),
+                                      SizedBox(width: width*0.05),
                                       Column(
                                         children: [
                                           Container(
-                                            width: width*0.08,
+                                            width: width*0.10,
+                                            height: height*0.05,
                                             decoration: BoxDecoration(
                                                 color: primaryAppColor,
                                                 borderRadius: BorderRadius.all(
-                                                    Radius.circular(20))),
+                                                    Radius.circular(40))),
                                             child: Column(
                                               children: [
-                                                Center(
-                                                  child: Text(
-                                                    Value1,
-                                                    style: TextStyle(
-                                                        fontSize: 22,
-                                                        color: white,
-                                                        fontWeight: FontWeight.bold),
-                                                  ),
+                                                Padding(
+                                                  padding: const EdgeInsets.only(top: 6),
+                                                  child: Icon(Icons.remove,color: white,),
                                                 ),
+                                                // Center(
+                                                //   child: Text(
+                                                //     Value1,
+                                                //     style: TextStyle(
+                                                //         fontSize: 22,
+                                                //         color: white,
+                                                //         fontWeight: FontWeight.bold),
+                                                //   ),
+                                                // ),
                                                 SizedBox(height: height*0.01),
                                               ],
                                             ),
@@ -188,7 +199,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                           Text(
                                             "7,92\$",
                                             style: TextStyle(
-                                              fontSize: 18.0,
+                                              fontSize: 16.0,
                                               fontWeight: FontWeight.bold,
                                               color: primaryAppColor,
                                             ),
@@ -301,7 +312,12 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                       color: white,
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => PaymentScreen(),
+                    ));
+
+                  },
                 ),
               ],
             ),

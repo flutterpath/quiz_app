@@ -12,7 +12,7 @@ const String About = "About";
 const String About_us_detail = "Lorem ipsum dolor sit amet, consectetur adipiscing elit,\nsed do eiusmod tempor incididunt ut labore et dolore\nmagna aliqua. Ut enim";
 const String Ready = "Ready";
 const String Eleven = "11";
-const String Detail = "Lorem ipsum dolor sit amet, consectetur\nadipiscing elit, sed do eiusmod tempor";
+const String Detail = "Lorem ipsum dolor sit amet,\nconsecteturadipiscing elit, sed";
 const String Twelve = "12";
 const String Thirteen = "13";
 const String Next = 'Next';
@@ -37,7 +37,7 @@ const String Use_Voucher= "Use Voucher";
 const String Login= "Login";
 const String Assingment1= "Assingment 1";
 const String Date= "Friday,21 june 2020";
-const String Detail3= "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do\neiusmod tempor incididunt ut labore et dolore";
+const String Detail3= "Lorem ipsum dolor sit amet, consectetur adipiscing\nelit, sed doeiusmod tempor incididunt ut labore et ";
 const String Add_File= "Add File";
 const String  Submit= "Submit";
 

@@ -72,7 +72,7 @@ class _AboutScreenState extends State<AboutScreen> {
                 ),
                 SizedBox(height: height*0.05),
                 Container(
-                  padding: EdgeInsets.fromLTRB(25.0, 15.0, 0.0, 0.0),
+                  padding: EdgeInsets.fromLTRB(20.0, 15.0, 0.0, 0.0),
                   child: Text(
                     Detail3,
                     style: TextStyle(
@@ -86,12 +86,12 @@ class _AboutScreenState extends State<AboutScreen> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      padding: EdgeInsets.fromLTRB(25.0, 15.0, 0.0, 0.0),
+                      padding: EdgeInsets.fromLTRB(20.0, 15.0, 0.0, 0.0),
                       child: Card(
                         color: white,
                         margin: const EdgeInsets.only(top: 20.0),
                         child: SizedBox(
-                            height: height*0.25,
+                            height: height*0.24,
                             width: width*0.90,
                             child: Padding(
                               padding: const EdgeInsets.only(top: 135.0, right: 35, left: 42.0),
@@ -133,7 +133,7 @@ class _AboutScreenState extends State<AboutScreen> {
 
                 SizedBox(height: height*0.03),
                 Container(
-                  padding: EdgeInsets.fromLTRB(300.0, 15.0, 0.0, 0.0),
+                  padding: EdgeInsets.fromLTRB(200.0, 15.0, 0.0, 0.0),
                   child: MaterialButton(
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
                     height: 60.0,

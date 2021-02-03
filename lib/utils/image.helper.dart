@@ -20,5 +20,6 @@ const String ic_learn ='assets/learn.png';
 const String ic_points ='assets/points.png';
 const String ic_teacher='assets/teacher.png';
 const String bg_study='assets/bg_study.png';
-const String bg_home='assets/bg_home.png';
+const String bg="assets/bg.png";
+const String bg_home="assets/bg_home.png";
 

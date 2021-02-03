@@ -1,17 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:quiz_app/main_ui/onboarding/login.dart';
 import 'package:quiz_app/utils/image.helper.dart';
 import 'package:quiz_app/utils/string.dart';
 
 import 'content_model.dart';
 
-class Onbording extends StatefulWidget {
+class OnbordingScreen extends StatefulWidget {
   @override
-  _OnbordingState createState() => _OnbordingState();
+  _OnbordingScreenState createState() => _OnbordingScreenState();
 }
 
-class _OnbordingState extends State<Onbording> {
+class _OnbordingScreenState extends State<OnbordingScreen> {
   int currentIndex = 0;
   PageController _controller;
 
@@ -36,8 +37,7 @@ class _OnbordingState extends State<Onbording> {
       body: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage(illImage),
-                fit: BoxFit.cover)),
+                image: AssetImage(illImage), fit: BoxFit.cover)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           mainAxisSize: MainAxisSize.max,
@@ -45,13 +45,36 @@ class _OnbordingState extends State<Onbording> {
             Align(
               alignment: Alignment.centerRight,
               child: Padding(
-                padding: const EdgeInsets.only(top: 35,right: 10),
+                padding:  EdgeInsets.only(top: height*0.04, right: width*0.03),
                 child: Text(
                   eLearning,
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 24,
                       fontWeight: FontWeight.bold),
+                ),
+              ),
+            ),
+            Align(
+              alignment: Alignment.centerRight,
+              child: Padding(
+                padding: EdgeInsets.only(top: height * 0.02, right: width*0.04),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => Login(),
+                    ));
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.only(right: 10),
+                    child: Text(
+                      skip,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ),
@@ -66,7 +89,7 @@ class _OnbordingState extends State<Onbording> {
                 },
                 itemBuilder: (_, i) {
                   return Padding(
-                    padding: const EdgeInsets.only(left: 15,right: 25),
+                    padding: const EdgeInsets.only(left: 15, right: 10),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -91,12 +114,34 @@ class _OnbordingState extends State<Onbording> {
                                 fontSize: 14,
                                 color: Colors.white,
                               ),
-                            )
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            // Text("Login",style: TextStyle(fontSize: 20),),
+                            Padding(
+                              padding:  EdgeInsets.only(left: width*0.34,top: height*0.11),
+                              child: InkWell(
+                                onTap: () {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => Login(),
+                                  ));
+                                },
+                                child: Text(
+                                  contents[i].text,
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
                           ],
                         ),
                         Image.asset(
                           contents[i].image,
-                          height: height * 0.42,
+                          height: height * 0.38,
                         )
                       ],
                     ),

@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:quiz_app/home_screen.dart';
+import 'package:quiz_app/main_ui/onboarding/register.dart';
 import 'package:quiz_app/utils/colorsPicker.dart';
 import 'package:quiz_app/utils/image.helper.dart';
 import 'package:quiz_app/utils/string.dart';
@@ -65,84 +67,86 @@ class _LoginState extends State<Login> {
                 ),
               ),
             ),
-            Container(
-              height: height * 0.3,
-              child: Stack(
-                overflow: Overflow.visible,
-                children: [
-                  Positioned(
-                    top: -20,
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                    child: Container(
-                      decoration: BoxDecoration(
-                          color: white,
-                          borderRadius:
-                              BorderRadius.vertical(top: Radius.circular(30))),
-                      child: Padding(
-                        padding: const EdgeInsets.all(15.0),
-                        child: Column(
-                          children: [
-                            SizedBox(height: 16),
-                            Text(
-                              loremIpsumDolor,
-                              style: TextStyle(fontSize: 12),
-                            ),
-                            SizedBox(height: 20),
-                            TextFormField(
-                              style: TextStyle(
-                                fontSize: 14,
-                                color: primaryTextColor,
+            SingleChildScrollView(
+              child: Container(
+                height: height * 0.3,
+                child: Stack(
+                  overflow: Overflow.visible,
+                  children: [
+                    Positioned(
+                      top: -20,
+                      bottom: 0,
+                      left: 0,
+                      right: 0,
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: white,
+                            borderRadius:
+                                BorderRadius.vertical(top: Radius.circular(30))),
+                        child: Padding(
+                          padding: const EdgeInsets.all(15.0),
+                          child: Column(
+                            children: [
+                              SizedBox(height: height*0.01),
+                              Text(
+                                loremIpsumDolor,
+                                style: TextStyle(fontSize: 10),
                               ),
-                              decoration: InputDecoration(
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color: primaryAppColor, width: 1.0),
-                                ),
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(10.0),
-                                  ),
-                                  //borderSide: BorderSide.none,
-                                ),
-                                hintText: jhanedoe,
-                                hintStyle: TextStyle(
+                              SizedBox(height: height*0.03),
+                              TextFormField(
+                                style: TextStyle(
+                                  fontSize: 14,
                                   color: primaryTextColor,
                                 ),
-                              ),
-                            ),
-                            SizedBox(height: 16),
-                            TextFormField(
-                              obscureText: true,
-                              style: TextStyle(
-                                fontSize: 14,
-                                color: primaryTextColor,
-                              ),
-                              decoration: InputDecoration(
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color: primaryAppColor, width: 1.0),
-                                ),
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(10.0),
+                                decoration: InputDecoration(
+                                  enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                        color: primaryAppColor, width: 1.0),
                                   ),
-                                  //borderSide: BorderSide.none,
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(10.0),
+                                    ),
+                                    //borderSide: BorderSide.none,
+                                  ),
+                                  hintText: jhanedoe,
+                                  hintStyle: TextStyle(
+                                    color: primaryTextColor,
+                                  ),
                                 ),
-                                hintText: point,
-                                hintStyle: TextStyle(
+                              ),
+                              SizedBox(height: height*0.01),
+                              TextFormField(
+                                obscureText: true,
+                                style: TextStyle(
+                                  fontSize: 14,
                                   color: primaryTextColor,
                                 ),
+                                decoration: InputDecoration(
+                                  enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                        color: primaryAppColor, width: 1.0),
+                                  ),
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(10.0),
+                                    ),
+                                    //borderSide: BorderSide.none,
+                                  ),
+                                  hintText: point,
+                                  hintStyle: TextStyle(
+                                    color: primaryTextColor,
+                                  ),
+                                ),
                               ),
-                            ),
-                            // SizedBox(height: 15),
-                          ],
+                              // SizedBox(height: 15),
+                            ],
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
             Row(
@@ -150,13 +154,17 @@ class _LoginState extends State<Login> {
               children: [
                 MaterialButton(
                   minWidth: width * 0.40,
-                  height: 60,
-                  onPressed: () {},
+                  height: height*0.08,
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => HomeScreen(),
+                    ));
+                  },
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10.0)),
                   color: primaryAppColor,
                   child: Text(
-                    register,
+                    login,
                     style: TextStyle(
                       fontSize: 16,
                       color: white,
@@ -165,8 +173,12 @@ class _LoginState extends State<Login> {
                 ),
                 MaterialButton(
                   minWidth: width * 0.40,
-                  height: 60,
-                  onPressed: () {},
+                  height: height*0.08,
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => Register(),
+                    ));
+                  },
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10.0)),
                   color: primaryAppColor,

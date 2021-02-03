@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/utils/colorsPicker.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MenuBarListTile extends StatelessWidget {
   final String image ;
@@ -19,5 +20,13 @@ class MenuBarListTile extends StatelessWidget {
       ],
 
     );
+  }
+  _launchURL() async {
+    const url = 'https://flutter.dev';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 }

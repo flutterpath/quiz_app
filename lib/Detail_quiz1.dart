@@ -40,10 +40,15 @@ class _DetailquizState extends State<Detailquiz> {
                           color: white,
                           borderRadius: BorderRadius.all(Radius.circular(10))),
                       child: Center(
-                        child: ImageIcon(
-                          AssetImage(back),
-                          size: 15.0,
-                          color: primaryAppColor,
+                        child: InkWell(
+                          onTap: (){
+                            Navigator.pop(context);
+                          },
+                          child: ImageIcon(
+                            AssetImage(back),
+                            size: 15.0,
+                            color: primaryAppColor,
+                          ),
                         ),
                       ),
                     ),

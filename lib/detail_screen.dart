@@ -6,12 +6,14 @@ import 'package:quiz_app/utils/colorsPicker.dart';
 import 'package:quiz_app/utils/image.helper.dart';
 import 'package:quiz_app/utils/string.dart';
 
-class Details extends StatefulWidget {
+import 'checkout_screen.dart';
+
+class DetailsScreen extends StatefulWidget {
   @override
-  _DetailsState createState() => _DetailsState();
+  _DetailsScreenState createState() => _DetailsScreenState();
 }
 
-class _DetailsState extends State<Details> {
+class _DetailsScreenState extends State<DetailsScreen> {
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
@@ -35,22 +37,33 @@ class _DetailsState extends State<Details> {
           padding: const EdgeInsets.only(top: 29, left: 25),
           child: Align(
               alignment: Alignment.topLeft,
-              child: Image.asset(
-                ic_seeMore,
-                height: 35,
+              child: InkWell(
+                onTap: (){
+                  Navigator.pop(context);
+                },
+                child: Image.asset(
+                  ic_seeMore,
+                  height: 35,
+                ),
               )),
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 120, left: 25),
-          child: Text(
-            "English\ndeep learn",
-            style: TextStyle(
-                fontSize: 24, color: white, fontWeight: FontWeight.w600),
+          padding:  EdgeInsets.only(top: height*0.19,left: 25,right: 20 ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                englishDeepLearn,
+                style: TextStyle(
+                    fontSize: 24, color: white, fontWeight: FontWeight.w600),
+              ),
+              Text(lessoninside14,style: TextStyle(color: white,fontSize: 10),)
+            ],
           ),
         ),
         Positioned(
-          top: 200,
-          bottom: 80,
+          top: height*0.28,
+          bottom: 75,
           left: 0,
           right: 0,
           child: Container(
@@ -68,7 +81,7 @@ class _DetailsState extends State<Details> {
                       child: Align(
                           alignment: Alignment.topLeft,
                           child: Text(
-                            "What you will learn",
+                            whatYouWillLearn,
                             style: TextStyle(
                                 fontSize: 18, fontWeight: FontWeight.w600),
                           )),
@@ -78,7 +91,7 @@ class _DetailsState extends State<Details> {
                       child: Align(
                           alignment: Alignment.topLeft,
                           child: Text(
-                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit,\nsed do eiusmod tempor incididunt ut labore et dolore\nmagna aliqua. Ut enim",
+                            loremIpsum1,
                             style: TextStyle(fontSize: 12),
                           )),
                     ),
@@ -217,8 +230,8 @@ class _DetailsState extends State<Details> {
                           ),
                           child: Row(
                             children: <Widget>[
-                              Image.asset(ic_image, height: 80, width: 100.0),
-                              SizedBox(width: 15),
+                              Image.asset(ic_image, height: 80, width: 98.0),
+                              SizedBox(width: width*0.02),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -257,7 +270,7 @@ class _DetailsState extends State<Details> {
                                   ),
                                 ],
                               ),
-                              Spacer(),
+                              SizedBox(width: width*0.13),
                               Container(
                                 height: 35,
                                 width: 35,
@@ -280,12 +293,12 @@ class _DetailsState extends State<Details> {
                           children: [
                             Padding(
                               padding: const EdgeInsets.only(left: 10),
-                              child: Text("Review",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600),),
+                              child: Text(review,style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600),),
                             ),
                             SizedBox(height: 8),
                             Padding(
                               padding: const EdgeInsets.only(left: 10),
-                              child: Text("All Review User",style: TextStyle(fontSize: 9),),
+                              child: Text(allReview,style: TextStyle(fontSize: 9),),
                             ),
                           ],
                         ),
@@ -379,11 +392,11 @@ class _DetailsState extends State<Details> {
                       shrinkWrap: true,
                       itemBuilder: (context, index) {
                         return Container(
-                          margin: EdgeInsets.only(left: 7, right: 5),
+                          margin: EdgeInsets.only(left: 7, right: 2),
                           child: Row(
                             children: <Widget>[
                               CircleAvatar(
-                                radius: 33.0,
+                                radius: 31.0,
                                 child: Text(
                                   dummyImageText,
                                   style: TextStyle(color: white, fontSize: 10),
@@ -395,7 +408,7 @@ class _DetailsState extends State<Details> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    "Ananda Via",
+                                    anandavia,
                                     style: TextStyle(
                                       fontSize: 16.0,
                                       fontWeight: FontWeight.bold,
@@ -404,7 +417,7 @@ class _DetailsState extends State<Details> {
                                   ),
                                   SizedBox(height: 10),
                                   Text(
-                                    "Lorem ipsum dolor sit amet, consectetur\nadipiscing elit, sed do eiusmod tempor incididunt",
+                                    loremIpsum1,
                                     style: TextStyle(
                                       fontSize: 10.0,
                                       color: primaryTextColor,
@@ -448,15 +461,29 @@ class _DetailsState extends State<Details> {
               )),
         ),
         Positioned(
-          bottom: 30,left: 120,
-            child: Column(
-              children: [
-                Text(
-                    "Add To Chart",style: TextStyle(fontSize: 18,color: white),),
-                Text(
-                  "7,92",style: TextStyle(fontSize: 15,color: white),),
-              ],
-            ))
+          bottom: 25,left: width*0.32,
+            child: MaterialButton(
+              minWidth: width*0.15,
+              height: height*0.05,
+              color:primaryAppColor,
+              child: new Text('Add TO Cart\n7,92\$,',textAlign: TextAlign.center,
+                  style: new TextStyle(fontSize: 16.0, color: Colors.white)),
+              onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => CheckoutScreen(),
+                  ));
+
+              },
+            ),
+            // Column(
+            //   children: [
+            //     Text(
+            //         "Add To Cart",style: TextStyle(fontSize: 18,color: white),),
+            //     Text(
+            //       "7,92\$",style: TextStyle(fontSize: 15,color: white),),
+            //   ],
+            // )
+        )
       ],
     ));
   }

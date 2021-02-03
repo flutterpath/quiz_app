@@ -18,7 +18,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
       body: Column(
         children: [
           Container(
-              height: height*0.32,
+              height: height * 0.32,
               width: double.infinity,
               decoration: BoxDecoration(
                 image: DecorationImage(
@@ -31,23 +31,28 @@ class _PaymentScreenState extends State<PaymentScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(height: height*0.04),
+                    SizedBox(height: height * 0.04),
                     Container(
-                      height: height*0.05,
-                      width: width*0.09,
+                      height: height * 0.05,
+                      width: width * 0.09,
                       decoration: BoxDecoration(
                           color: white,
                           borderRadius: BorderRadius.all(Radius.circular(10))),
                       child: Center(
-                        child: ImageIcon(
-                          AssetImage(back),
-                          size: 15.0,
-                          color: primaryAppColor,
+                        child: InkWell(
+                          onTap: (){
+                            Navigator.pop(context);
+                          },
+                          child: ImageIcon(
+                            AssetImage(back),
+                            size: 15.0,
+                            color: primaryAppColor,
+                          ),
                         ),
                       ),
                     ),
                     SizedBox(
-                      height: height*0.14,
+                      height: height * 0.14,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -64,54 +69,56 @@ class _PaymentScreenState extends State<PaymentScreen> {
                     ),
                   ],
                 ),
-              )
-          ),
+              )),
           Expanded(
             child: Stack(
               overflow: Overflow.visible,
               children: [
                 Positioned(
-                    height: height*0.64,
+                    height: height * 0.66,
                     left: 0,
                     right: 0,
-                    bottom: 1,
+                    bottom: 0,
                     child: Container(
                       width: double.infinity,
-                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      padding: EdgeInsets.symmetric(horizontal: 18),
                       decoration: BoxDecoration(
                         color: white,
                         borderRadius: BorderRadius.all(Radius.circular(30)),
                       ),
-
                       child: Column(
                         children: [
-                          SizedBox(height: height*0.02),
-
+                          SizedBox(height: height * 0.02),
                           Container(
-                            height: height*0.27,
+                            height: height * 0.27,
                             width: MediaQuery.of(context).size.width,
                             child: ListView.builder(
-                              scrollDirection: Axis.horizontal,
+                                scrollDirection: Axis.horizontal,
                                 itemCount: 3,
-                                itemBuilder: (context, index){
+                                itemBuilder: (context, index) {
                                   return Container(
-                                      width: width*0.91,
-                                      margin: EdgeInsets.only(right: 22),
+                                      width: width * 0.90,
+                                      margin: EdgeInsets.only(right: 21),
                                       padding: EdgeInsets.all(20),
-                                      height: 222,
+                                      height: height * 0.10,
                                       decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(10)),
                                           gradient: LinearGradient(
                                               begin: Alignment.topLeft,
                                               end: Alignment.bottomRight,
-                                              colors: [Color(0xff328BFB), Color(0xff70D8FF)])
-                                      ),
+                                              colors: [
+                                                Color(0xff328BFB),
+                                                Color(0xff70D8FF)
+                                              ])),
                                       child: Column(
                                         children: [
                                           Row(
-                                            mainAxisAlignment: MainAxisAlignment.end,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.end,
                                             children: [
-                                              Text(Paymall,
+                                              Text(
+                                                Paymall,
                                                 style: TextStyle(
                                                     fontSize: 12.0,
                                                     fontWeight: FontWeight.bold,
@@ -119,29 +126,30 @@ class _PaymentScreenState extends State<PaymentScreen> {
                                               ),
                                             ],
                                           ),
-
-                                          SizedBox(height: height*0.02),
-
+                                          SizedBox(height: height * 0.02),
                                           Row(
-                                            mainAxisAlignment: MainAxisAlignment.start,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
                                             children: [
                                               Container(
-                                                height: height*0.06,
-                                                width: width*0.17,
+                                                height: height * 0.06,
+                                                width: width * 0.17,
                                                 decoration: BoxDecoration(
-                                                  color: Color(0xffFFC85D),
-                                                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                                                  color: fadeYellow,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(10)),
                                                 ),
                                               ),
                                             ],
                                           ),
-
-                                          SizedBox(height: height*0.02),
-
+                                          SizedBox(height: height * 0.02),
                                           Row(
-                                            mainAxisAlignment: MainAxisAlignment.start,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
                                             children: [
-                                              Text(Value4,
+                                              Text(
+                                                Value4,
                                                 style: TextStyle(
                                                     fontSize: 12.0,
                                                     fontWeight: FontWeight.bold,
@@ -149,47 +157,45 @@ class _PaymentScreenState extends State<PaymentScreen> {
                                               ),
                                             ],
                                           ),
-
-                                          SizedBox(height: height*0.02),
-
+                                          SizedBox(height: height * 0.02),
                                           Row(
-                                            mainAxisAlignment: MainAxisAlignment.start,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
                                             children: [
-                                              Text(ValidThru,
+                                              Text(
+                                                ValidThru,
                                                 style: TextStyle(
-                                                    fontSize: 12.0,
+                                                    fontSize: 10.0,
+                                                    color: white),
+                                              ),
+                                              SizedBox(width: width * 0.02),
+                                              Text(
+                                                Value5,
+                                                style: TextStyle(
+                                                    fontSize: 17.0,
                                                     fontWeight: FontWeight.bold,
                                                     color: white),
                                               ),
-                                              SizedBox(width: width*0.02),
-
-                                              Text(Value5,
+                                              SizedBox(width: width * 0.05),
+                                              Text(
+                                                MemberSince,
                                                 style: TextStyle(
-                                                    fontSize: 18.0,
+                                                    fontSize: 10.0,
+                                                    color: white),
+                                              ),
+                                              SizedBox(width: width * 0.02),
+                                              Text(
+                                                Value20,
+                                                style: TextStyle(
+                                                    fontSize: 17.0,
                                                     fontWeight: FontWeight.bold,
                                                     color: white),
                                               ),
-                                              SizedBox(width: width*0.05),
-
-                                              Text(MemberSince,
-                                                style: TextStyle(
-                                                    fontSize: 12.0,
-                                                    fontWeight: FontWeight.bold,
-                                                    color: white),
-                                              ),
-                                              SizedBox(width: width*0.02),
-
-                                              Text(Value20,
-                                                style: TextStyle(
-                                                    fontSize: 18.0,
-                                                    fontWeight: FontWeight.bold,
-                                                    color: white),
-                                              ),
-                                              SizedBox(width: width*0.24),
-
-
+                                              SizedBox(width: width * 0.15),
                                               Row(
-                                                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceAround,
                                                 children: [
                                                   Stack(
                                                     overflow: Overflow.visible,
@@ -197,8 +203,10 @@ class _PaymentScreenState extends State<PaymentScreen> {
                                                       Stack(
                                                         children: [
                                                           CircleAvatar(
-                                                            radius: 20.0,
-                                                            backgroundColor: Color(0xffFFC85D),
+                                                            radius: 19.0,
+                                                            backgroundColor:
+                                                                Color(
+                                                                    0xffFFC85D),
                                                           ),
                                                         ],
                                                       ),
@@ -207,8 +215,10 @@ class _PaymentScreenState extends State<PaymentScreen> {
                                                         child: Stack(
                                                           children: [
                                                             CircleAvatar(
-                                                              radius: 20.0,
-                                                              backgroundColor: Color(0xffFF6363),
+                                                              radius: 19.0,
+                                                              backgroundColor:
+                                                                  Color(
+                                                                      0xffFF6363),
                                                             ),
                                                           ],
                                                         ),
@@ -217,31 +227,36 @@ class _PaymentScreenState extends State<PaymentScreen> {
                                                   )
                                                 ],
                                               )
-
-
                                             ],
                                           ),
                                         ],
-                                      )
-                                  );
-                                }
-                            ),
+                                      ));
+                                }),
                           ),
-
-                          SizedBox(height: height*0.01),
+                          SizedBox(height: height * 0.01),
                           Container(
                               padding: EdgeInsets.all(20),
-                              height: height*0.14,
+                              height: height * 0.15,
                               decoration: BoxDecoration(
                                 color: white,
-                                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey.withOpacity(0.5),
+                                    spreadRadius: 2,
+                                    blurRadius: 5,
+                                    offset: Offset(0, 3), // changes position of shadow
+                                  ),
+                                ],
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10)),
                               ),
                               child: Column(
                                 children: [
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
-                                      Text(Value4,
+                                      Text(
+                                        Value4,
                                         style: TextStyle(
                                             fontSize: 12.0,
                                             fontWeight: FontWeight.bold,
@@ -249,47 +264,43 @@ class _PaymentScreenState extends State<PaymentScreen> {
                                       ),
                                     ],
                                   ),
-
-                                  SizedBox(height: height*0.02),
-
+                                  SizedBox(height: height * 0.02),
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
-                                      Text(ValidThru,
+                                      Text(
+                                        ValidThru,
                                         style: TextStyle(
-                                            fontSize: 12.0,
+                                            fontSize: 10.0,
+                                            color: primaryAppColor),
+                                      ),
+                                      SizedBox(width: width * 0.02),
+                                      Text(
+                                        Value5,
+                                        style: TextStyle(
+                                            fontSize: 17.0,
                                             fontWeight: FontWeight.bold,
                                             color: primaryAppColor),
                                       ),
-                                      SizedBox(width: width*0.02),
-
-                                      Text(Value5,
+                                      SizedBox(width: width * 0.05),
+                                      Text(
+                                        MemberSince,
                                         style: TextStyle(
-                                            fontSize: 18.0,
+                                            fontSize: 10.0,
+                                            color: primaryAppColor),
+                                      ),
+                                      SizedBox(width: width * 0.02),
+                                      Text(
+                                        Value20,
+                                        style: TextStyle(
+                                            fontSize: 17.0,
                                             fontWeight: FontWeight.bold,
                                             color: primaryAppColor),
                                       ),
-                                      SizedBox(width: width*0.05),
-
-                                      Text(MemberSince,
-                                        style: TextStyle(
-                                            fontSize: 12.0,
-                                            fontWeight: FontWeight.bold,
-                                            color: primaryAppColor),
-                                      ),
-                                      SizedBox(width: width*0.02),
-
-                                      Text(Value20,
-                                        style: TextStyle(
-                                            fontSize: 18.0,
-                                            fontWeight: FontWeight.bold,
-                                            color: primaryAppColor),
-                                      ),
-                                      SizedBox(width: width*0.24),
-
-
+                                      SizedBox(width: width * 0.15),
                                       Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceAround,
                                         children: [
                                           Stack(
                                             overflow: Overflow.visible,
@@ -297,8 +308,9 @@ class _PaymentScreenState extends State<PaymentScreen> {
                                               Stack(
                                                 children: [
                                                   CircleAvatar(
-                                                    radius: 20.0,
-                                                    backgroundColor: Color(0xffFFC85D),
+                                                    radius: 19.0,
+                                                    backgroundColor:
+                                                        Color(0xffFFC85D),
                                                   ),
                                                 ],
                                               ),
@@ -307,8 +319,9 @@ class _PaymentScreenState extends State<PaymentScreen> {
                                                 child: Stack(
                                                   children: [
                                                     CircleAvatar(
-                                                      radius: 20.0,
-                                                      backgroundColor: Color(0xffFF6363),
+                                                      radius: 19.0,
+                                                      backgroundColor:
+                                                          Color(0xffFF6363),
                                                     ),
                                                   ],
                                                 ),
@@ -317,70 +330,75 @@ class _PaymentScreenState extends State<PaymentScreen> {
                                           )
                                         ],
                                       )
-
-
                                     ],
                                   ),
                                 ],
-                              )
-                          ),
-                          SizedBox(height: height*0.01),
+                              )),
+                          SizedBox(height: height * 0.01),
                           Container(
                               padding: EdgeInsets.all(20),
-                              height: height*0.14,
+                              height: height * 0.14,
                               decoration: BoxDecoration(
                                 color: white,
-                                borderRadius: BorderRadius.all(Radius.circular(10)),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey.withOpacity(0.5),
+                                    spreadRadius: 2,
+                                    blurRadius: 5,
+                                    offset: Offset(0, 3), // changes position of shadow
+                                  ),
+                                ],
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10)),
                               ),
                               child: Column(
-
                                 children: [
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
                                       Image.asset(Card1,
-                                          height: height*0.08,
-                                          width: width*0.15),
-                                      SizedBox(width: width*0.05),
-
+                                          height: height * 0.08,
+                                          width: width * 0.15),
+                                      SizedBox(width: width * 0.04),
                                       Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
-                                          Text(Use_Voucher,
+                                          Text(
+                                            Use_Voucher,
                                             style: TextStyle(
                                                 fontSize: 18.0,
                                                 fontWeight: FontWeight.bold,
                                                 color: primaryAppColor),
                                           ),
-                                          SizedBox(height: height*0.01),
-                                          Text(Detail,
+                                          SizedBox(height: height * 0.01),
+                                          Text(
+                                            Detail,
                                             style: TextStyle(
                                                 fontSize: 12.0,
-                                                color: primaryAppColor),),
+                                                color: primaryAppColor),
+                                          ),
                                         ],
                                       ),
                                     ],
                                   ),
                                 ],
-                              )
-                          ),
-                          SizedBox(height: height*0.01),
-
+                              )),
+                          SizedBox(height: height * 0.01),
                           Center(
                             child: Container(
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Text(Total,
+                                  Text(
+                                    Total,
                                     style: TextStyle(
                                         fontSize: 18.0,
                                         fontWeight: FontWeight.bold,
                                         color: primaryTextColor),
                                   ),
-
-                                  SizedBox(width: width*0.60),
-
-                                  Text(Value3,
+                                  Text(
+                                    Value3,
                                     style: TextStyle(
                                         fontSize: 18.0,
                                         fontWeight: FontWeight.bold,
@@ -392,13 +410,12 @@ class _PaymentScreenState extends State<PaymentScreen> {
                           )
                         ],
                       ),
-                    )
-                ),
+                    )),
               ],
             ),
           ),
           SizedBox(
-            height: height*0.06,
+            height: height * 0.06,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

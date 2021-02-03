@@ -1,17 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:quiz_app/main_ui/onboarding/login.dart';
 import 'package:quiz_app/utils/colorsPicker.dart';
 import 'package:quiz_app/utils/image.helper.dart';
 import 'package:quiz_app/utils/string.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'menuBarListTile.dart';
 
-class Menu extends StatefulWidget {
+class MenuScreen extends StatefulWidget {
   @override
-  _MenuState createState() => _MenuState();
+  _MenuScreenState createState() => _MenuScreenState();
 }
 
-class _MenuState extends State<Menu> {
+class _MenuScreenState extends State<MenuScreen> {
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
@@ -47,9 +49,15 @@ class _MenuState extends State<Menu> {
                         ),
                       ),
                     ),
-                    ImageIcon(
-                      AssetImage(ic_arrow),color: primaryAppColor,
+                    InkWell(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: ImageIcon(
+                        AssetImage(ic_arrow),color: primaryAppColor,
+                      ),
                     ),
+
                     Align(alignment: Alignment.centerRight,
                         child:  Image.asset(ic_logout,scale: 16,)),
                   ],
@@ -78,9 +86,9 @@ class _MenuState extends State<Menu> {
                         Align(alignment: Alignment.centerLeft,
                             child: Text(security,style: TextStyle(fontSize: 16,),)),
                         SizedBox(height: 25),
-                        MenuBarListTile(image: ic_changeSecurity,title: changeSecurity,),
+                        GestureDetector(child: MenuBarListTile(image: ic_changeSecurity,title: changeSecurity,),onTap: _launchURL),
                         Divider(color: Colors.grey[400],height: 25,),
-                        MenuBarListTile(image: ic_changePassword,title: changePassword,),
+                        GestureDetector(child: MenuBarListTile(image: ic_changePassword,title: changePassword,),onTap: _launchURL),
                         Divider(color: Colors.grey[400],height: 25,),
                       ],
                     ),
@@ -105,15 +113,15 @@ class _MenuState extends State<Menu> {
                         Align(alignment: Alignment.centerLeft,
                             child: Text(about,style: TextStyle(fontSize: 16,),)),
                         SizedBox(height: 25),
-                        MenuBarListTile(image: ic_appsInfo,title: appsInfo,),
+                        GestureDetector(child: MenuBarListTile(image: ic_appsInfo,title: appsInfo,),onTap: _launchURL,),
                         Divider(color: Colors.grey[400],height: 25,),
-                        MenuBarListTile(image: ic_appsSetting,title: appsSetting,),
+                        GestureDetector(child: MenuBarListTile(image: ic_appsSetting,title: appsSetting,),onTap: _launchURL,),
                         Divider(color: Colors.grey[400],height: 25,),
-                        MenuBarListTile(image: ic_termAnd,title: termAndAgreement,),
+                        GestureDetector(child: MenuBarListTile(image: ic_termAnd,title: termAndAgreement,),onTap: _launchURL,),
                         Divider(color: Colors.grey[400],height: 25,),
-                        MenuBarListTile(image: ic_privacyPolicy,title: privacyPolicy,),
+                        GestureDetector(child: MenuBarListTile(image: ic_privacyPolicy,title: privacyPolicy,),onTap: _launchURL,),
                         Divider(color: Colors.grey[400],height: 25,),
-                        MenuBarListTile(image: ic_helpCenter,title: helpCenter,),
+                        GestureDetector(child: MenuBarListTile(image: ic_helpCenter,title: helpCenter,),onTap: _launchURL,),
                         Divider(color: Colors.grey[400],height: 25,),
                         SizedBox(height: 15,),
                         Text(versionCopyRight,style: TextStyle(fontSize: 12,color: Colors.grey[500]),),
@@ -129,5 +137,13 @@ class _MenuState extends State<Menu> {
         ),
       ),
     );
+  }
+  _launchURL() async {
+    const url = 'https://flutter.dev';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 }
