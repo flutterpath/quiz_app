@@ -17,7 +17,7 @@ class ChewieDemo extends StatefulWidget {
 }
 
 class _ChewieDemoState extends State<ChewieDemo> {
-  TargetPlatform _platform;
+  // TargetPlatform _platform;
   VideoPlayerController _videoPlayerController1;
   VideoPlayerController _videoPlayerController2;
   ChewieController _chewieController;

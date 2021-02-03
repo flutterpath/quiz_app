@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:quiz_app/detail_study2.dart';
-import 'package:quiz_app/profile_screen.dart';
 import 'package:quiz_app/utils/colorsPicker.dart';
 import 'package:quiz_app/utils/image.helper.dart';
 import 'package:quiz_app/utils/string.dart';

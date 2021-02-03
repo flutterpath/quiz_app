@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:quiz_app/main_ui/onboarding/login.dart';
 import 'package:quiz_app/utils/colorsPicker.dart';
 import 'package:quiz_app/utils/image.helper.dart';
 import 'package:quiz_app/utils/string.dart';

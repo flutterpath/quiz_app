@@ -8,7 +8,6 @@ import 'package:quiz_app/util/string.dart';
 class Detailquiz2 extends StatefulWidget {
   final double _expendedBottomSheetBottomPosition = 0;
   final double _collapsedBottomSheetBottomPosition = -250;
-  final double _completeCollapsedBottomSheetBottomPosition = -330;
 
   @override
   _Detailquiz2State createState() => _Detailquiz2State();

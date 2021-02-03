@@ -80,23 +80,23 @@ flutter:
   fonts:
     - family: Montserrart
       fonts:
-        - asset: fonts/Montserrat-Thin.ttf
+        - asset: fonts/montserrat_thin.ttf
           weight: 100
-        - asset: fonts/Montserrat-ExtraLight.ttf
+        - asset: fonts/montserrat_extra_light.ttf
           weight: 200
-        - asset: fonts/Montserrat-Regular.ttf
+        - asset: fonts/montserrat_regular.ttf
           weight: 400
-        - asset: fonts/Montserrat-SemiBold.ttf
+        - asset: fonts/montserrat_semiBold.ttf
           weight: 600
-        - asset: fonts/Montserrat-Medium.ttf
+        - asset: fonts/montserrat_medium.ttf
           weight: 500
-        - asset: fonts/Montserrat-Light.ttf
+        - asset: fonts/montserrat_light.ttf
           weight: 300
-        - asset: fonts/Montserrat-ExtraBold.ttf
+        - asset: fonts/montserrat_extrabold.ttf
           weight: 800
-        - asset: fonts/Montserrat-Bold.ttf
+        - asset: fonts/montserrat_bold.ttf
           weight: 700
-        - asset: fonts/Montserrat-Black.ttf
+        - asset: fonts/montserrat_black.ttf
           weight: 900
 
 

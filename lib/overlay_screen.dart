@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/Content_model.dart';
 import 'package:quiz_app/util/color_picker.dart';
-import 'package:quiz_app/util/image_picker.dart';
 import 'package:quiz_app/util/string.dart';
 
 
@@ -26,7 +25,7 @@ class _OverlayScreenState extends State<OverlayScreen> {
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
-    var width = MediaQuery.of(context).size.width;
+    // var width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: white,
       body: Column(
